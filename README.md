@@ -16,8 +16,6 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 
 ## API and Data Sample
 
-Show us a snippet of JSON returned by your Airtable (you can find it under the API documentation) so we know you can access it and get the info you need. This __must__ be properly formatted. An example is below:
-
 ```json
 {
     "records": [
@@ -65,11 +63,9 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations. Here's an example.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|October 22| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|October 22| Prompt / Wireframes / Priority Matrix / Timeframes / Form | Incomplete
 |October 23| Pseudocode / Form | Incomplete
 |October 24| Form / Airtable API / Checkboxes | Incomplete
 |October 25| Airtable API / Checkboxes / days of the week | Incomplete
@@ -83,7 +79,10 @@ This schedule will be used to keep track of your progress throughout the week an
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 3hrs| 7 hrs | |
 | Working with API | H | 3hrs| 5 hrs |  |
-| Working with API | H | 3hrs| 5 hrs |  |
+| Adding Check Boxes | H | 0 m3ins | 20 mins |  |
+| Adding days of the week | H | 1 hrs| 1 hrs |  |
+| Styling | H | 3hrs| 15 hrs |  |
+| Post MVP | H | 3hrs| 5 hrs |  |
 | Total | H | 6hrs| 5hrs |  |
 
 ## SWOT Analysis
