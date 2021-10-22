@@ -79,7 +79,7 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 3hrs| 7 hrs | |
 | Working with API | H | 3hrs| 5 hrs |  |
-| Adding Check Boxes | H | 0 m3ins | 20 mins |  |
+| Adding Check Boxes | H | 30 mins | 20 mins |  |
 | Adding days of the week | H | 1 hrs| 1 hrs |  |
 | Styling | H | 3hrs| 15 hrs |  |
 | Post MVP | H | 3hrs| 5 hrs |  |
