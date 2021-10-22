@@ -69,21 +69,22 @@ This schedule will be used to keep track of your progress throughout the week an
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|October 22| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|October 23| Pseudocode / Form | Incomplete
+|October 24| Form / Airtable API / Checkboxes | Incomplete
+|October 25| Airtable API / Checkboxes / days of the week | Incomplete
+|October 26| MVP / Style| Incomplete
+|October 27|Post-MVP / Styling | Incomplete
+|October 28| Styling | Incomplete
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Adding Form | H | 3hrs| 7 hrs | |
+| Working with API | H | 3hrs| 5 hrs |  |
+| Working with API | H | 3hrs| 5 hrs |  |
+| Total | H | 6hrs| 5hrs |  |
 
 ## SWOT Analysis
 
