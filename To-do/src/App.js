@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
+
+const apiUrl = ('https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key=key6vJOZALxfOvCDy');
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [activity, setActivity] = useState({});
+  const [chore, setChore] = useState('')
+  const [toggleFetch, setToggleFetch] = useState(true)
+  useEffect(() => {
+    const getData = async () => {
+      const resp = await axios.get(apiUrl);
+      setActivity(resp.data.records[0])
+
+    }
+    getData();
+  }, [toggleFetch])
+
 }
 
 export default App;
