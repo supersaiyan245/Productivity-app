@@ -17,6 +17,22 @@ function App() {
     getData();
   }, [toggleFetch])
 
+  const handleEnter = async (ev) => {
+    ev.preventDefault();
+
+    const loadActivity = {
+
+    }
+
+  }
+  return (
+    <div className="App">
+      <Link to="/" >Home</Link>
+      <Route path="/">
+
+      </Route>
+    </div>
+  );
 }
 
 export default App;
