@@ -27,7 +27,14 @@ function App() {
   }
   return (
     <div className="App">
-      <Link to="/" >Home</Link>
+      <nav>
+        <Link to="/" >Home</Link>
+        <Link to="/Abous Us" >About Us</Link>
+        <Link to='/Recommendations'>Recommendations</Link>
+        <Link to='/Chores'>Chores</Link>
+        <Link to='/Errands'>Errands</Link>
+        <Link to='/Fun'>Fun</Link>
+      </nav>
       <Route path="/">
 
       </Route>
