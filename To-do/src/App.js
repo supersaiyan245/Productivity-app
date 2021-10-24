@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ function App() {
     getData();
   }, [toggleFetch]);
 
-  const handleEnter = async (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
 
     const loadActivity = {
@@ -32,8 +32,13 @@ function App() {
     
     setToggleFetch(!toggleFetch);
   }
-  
-  let handleSubmit = handleEnter; 
+  const handleKeyPress = ev => {
+    if (ev.keyCode === 13) {
+      handleSubmit();
+    }
+  }
+
+
   return (
     <div className="App">
       <nav className="headers">
@@ -48,7 +53,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           <h3>Date</h3>
           <label>Chore</label>
-          <input value={chore} onChange
+          <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} />
         </form>
       </Route>
     </div>
