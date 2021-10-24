@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
+
+import Chore from './components/Chores.js';
+
 
 const apiUrl = ('https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key=key6vJOZALxfOvCDy');
 
@@ -28,10 +31,12 @@ function App() {
       fun,
     }
 
-    await axios.post(url, { fields: loadActivity })
+    await axios.post(apiUrl, { fields: loadActivity })
     
     setToggleFetch(!toggleFetch);
   }
+
+
   const handleKeyPress = ev => {
     if (ev.keyCode === 13) {
       handleSubmit();
@@ -45,21 +50,26 @@ function App() {
         <Link to="/" >Home</Link>
         <Link to="/About Us" >About Us</Link>
         <Link to='/Recommendations'>Recommendations</Link>
-        <Link to='/Chores'>Chores</Link>
+        <Link to='/Chores/'>Chores</Link>
         <Link to='/Errands'>Errands</Link>
         <Link to='/Fun'>Fun</Link>
       </nav>
       <Route path="/">
-        <form onSubmit={handleSubmit}>
-          <h3>Date</h3>
+        <form onSubmit={handleKeyPress}>
+          
           <label>Chore</label>
           <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} />
-          <label>errand</label>
+          <label>Errand</label>
           <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} />
           <label>Fun</label>
           <input value={fun} onChange={(e) => setFun(e.target.value)} onKeyPress={handleKeyPress} />
           <button type="submit">Submit</button>
         </form>
+      </Route>
+      <Route path='/Chores/' >
+        <Chore
+          chores={activity}
+        />
       </Route>
     </div>
   );
