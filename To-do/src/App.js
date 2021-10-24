@@ -54,6 +54,11 @@ function App() {
           <h3>Date</h3>
           <label>Chore</label>
           <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} />
+          <label>errand</label>
+          <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} />
+          <label>Fun</label>
+          <input value={fun} onChange={(e) => setFun(e.target.value)} onKeyPress={handleKeyPress} />
+          <button type="submit">Submit</button>
         </form>
       </Route>
     </div>
