@@ -28,8 +28,12 @@ function App() {
       fun,
     }
 
-    await axios.post(url, {fields: loadActivity})
+    await axios.post(url, { fields: loadActivity })
+    
+    setToggleFetch(!toggleFetch);
   }
+  
+  let handleSubmit = handleEnter; 
   return (
     <div className="App">
       <nav className="headers">
@@ -41,7 +45,11 @@ function App() {
         <Link to='/Fun'>Fun</Link>
       </nav>
       <Route path="/">
-        <form 
+        <form onSubmit={handleSubmit}>
+          <h3>Date</h3>
+          <label>Chore</label>
+          <input value={chore} onChange
+        </form>
       </Route>
     </div>
   );
