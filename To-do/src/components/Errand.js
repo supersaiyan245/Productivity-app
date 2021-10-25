@@ -12,11 +12,22 @@ function Errand() {
     }
   });
   useEffect(() => {
-    const getData = async () => {
+    const getErrandData = async () => {
       const resp = await axios.get(errandUrl);
       setActivity(resp.data.records)
 
     }
-    getData();
+    getErrandData();
   }, [toggleFetch]);
+
+  return (
+    <div>
+      <form onSubmit={handleKeyPress}>
+      <label>Errand</label>
+          <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add an Errand"/>
+      </form>
+    </div>
+  )
 }
+
+export default Errand;

@@ -53,14 +53,10 @@ function App() {
       </nav>
       <Route path="/">
         <form onSubmit={handleKeyPress}>
-          <label>Errand</label>
-          <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add an Errand"/>
-          <label>Fun</label>
-          <input value={fun} onChange={(e) => setFun(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Fun thing"/>
           <button type="submit">Submit</button>
         </form>
       </Route>
-      <Route path='/List/Chores/' >
+      <Route path='/List/Chores/' exact>
         <Chore
           chores={activity}
         />

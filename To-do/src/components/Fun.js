@@ -6,13 +6,48 @@ import { Route, Link } from 'react-router-dom';
 function Fun() {
   const [fun, setFun] = useState('');
   const [toggleFetch, setToggleFetch] = useState(true)
-  const funUrl = ('')
+  const funUrl = ("https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%203?maxRecords=3&view=Grid%20view", {
+    headers: {
+      'Authorization': 'Bearer key6vJOZALxfOvCDy'
+    }
+  })
   useEffect(() => {
     const getData = async () => {
-      const resp = await axios.get(url);
+      const resp = await axios.get(funUrl);
       setActivity(resp.data.records)
 
     }
     getData();
   }, [toggleFetch]);
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+
+    const loadFun = {
+      fun,
+    }
+
+    await axios.post(apiUrl, { fields: loadFun })
+    
+    setToggleFetch(!toggleFetch);
+  }
+
+
+  const handleKeyPress = ev => {
+    if (ev.keyCode === 13) {
+      ev.preventDefault();
+      handleSubmit();
+    }
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleKeyPress}>
+        <label>Fun</label>
+        <input value={fun} onChange={(e) => setFun(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Fun thing"/>
+      </form>
+    </div>
+  )
 }
+
+export default Fun;
