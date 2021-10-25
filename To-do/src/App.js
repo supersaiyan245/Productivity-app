@@ -23,7 +23,6 @@ function App() {
     ev.preventDefault();
 
     const loadActivity = {
-      chore,
       errand,
       fun,
     }

@@ -1,8 +1,12 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
 
 
 function Chore({ chores }) {
   const choreName = chores.find(identifyChore => identifyChore.fields.chore)
   const [chore, setChore] = useState('');
+  const [toggleFetch, setToggleFetch] = useState(true)
   const choreUrl = ('')
   useEffect(() => {
     const getData = async () => {
@@ -12,9 +16,29 @@ function Chore({ chores }) {
     }
     getData();
   }, [toggleFetch]);
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+
+    const loadChore = {
+      chore,
+    }
+
+    await axios.post(apiUrl, { fields: loadChore })
+    
+    setToggleFetch(!toggleFetch);
+  }
+
+  const handleKeyPress = ev => {
+    if (ev.keyCode === 13) {
+      ev.preventDefault();
+      handleSubmit();
+    }
+  }
+
   return (
     <div>
-      <form >
+      <form onSubmit={handleKeyPress}>
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore"/>
       </form>
