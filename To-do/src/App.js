@@ -9,9 +9,6 @@ const apiUrl = ('https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key
 
 function App() {
   const [activity, setActivity] = useState([]);
-  const [chore, setChore] = useState('');
-  const [errand, setErrand] = useState('');
-  const [fun, setFun] = useState('');
   const [toggleFetch, setToggleFetch] = useState(true)
   useEffect(() => {
     const getData = async () => {
@@ -39,6 +36,7 @@ function App() {
 
   const handleKeyPress = ev => {
     if (ev.keyCode === 13) {
+      ev.preventDefault();
       handleSubmit();
     }
   }
@@ -46,27 +44,24 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="headers">
-        <Link to="/" >Home</Link>
-        <Link to="/About Us" >About Us</Link>
-        <Link to='/Recommendations'>Recommendations</Link>
-        <Link to='/Chores/'>Chores</Link>
-        <Link to='/Errands'>Errands</Link>
-        <Link to='/Fun'>Fun</Link>
+      <nav>
+        <Link to="/" className="headers">Home</Link>
+        <Link to="/About Us" className="headers">About Us</Link>
+        <Link to='/Recommendations' className="headers">Recommendations</Link>
+        <Link to='/List/Chores/' className="headers">Chores</Link>
+        <Link to='/Errands' className="headers">Errands</Link>
+        <Link to='/Fun' className="headers">Fun</Link>
       </nav>
       <Route path="/">
         <form onSubmit={handleKeyPress}>
-          
-          <label>Chore</label>
-          <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} />
           <label>Errand</label>
-          <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} />
+          <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add an Errand"/>
           <label>Fun</label>
-          <input value={fun} onChange={(e) => setFun(e.target.value)} onKeyPress={handleKeyPress} />
+          <input value={fun} onChange={(e) => setFun(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Fun thing"/>
           <button type="submit">Submit</button>
         </form>
       </Route>
-      <Route path='/Chores/' >
+      <Route path='/List/Chores/' >
         <Chore
           chores={activity}
         />

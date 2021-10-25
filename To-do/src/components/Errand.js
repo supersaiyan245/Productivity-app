@@ -1,12 +1,12 @@
 
 
 
-function Fun() {
-  const [fun, setFun] = useState('');
-  const funUrl = ('')
+function Errand() {
+  const [errand, setErrand] = useState('');
+  const errandUrl = ('');
   useEffect(() => {
     const getData = async () => {
-      const resp = await axios.get(url);
+      const resp = await axios.get(apiUrl);
       setActivity(resp.data.records)
 
     }
