@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Chores from './components/Chores';
+import Chore from './components/Chores';
+import Nav from './components/Nav.js'
+import { Route } from "react-router-dom";
 
 
 
@@ -14,7 +16,6 @@ function App() {
       </Route> */}
       <Route path='/List/Chores/' exact>
         <Chore
-          chores={}
         />
       </Route>
     </div>
