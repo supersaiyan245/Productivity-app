@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
 
 
 function Errand() {
@@ -19,6 +18,25 @@ function Errand() {
     }
     getErrandData();
   }, [toggleFetch]);
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+
+    const loadChore = {
+      chore,
+    }
+
+    await axios.post(errandUrl, { fields: loadChore })
+    
+    setToggleFetch(!toggleFetch);
+  }
+
+  const handleKeyPress = ev => {
+    if (ev.keyCode === 13) {
+      ev.preventDefault();
+      handleSubmit();
+    }
+  }
 
   return (
     <div>

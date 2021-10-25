@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
 
 
 function Fun() {
@@ -12,12 +11,12 @@ function Fun() {
     }
   })
   useEffect(() => {
-    const getData = async () => {
+    const getFunData = async () => {
       const resp = await axios.get(funUrl);
       setActivity(resp.data.records)
 
     }
-    getData();
+    getFunData();
   }, [toggleFetch]);
 
   const handleSubmit = async (ev) => {
@@ -27,7 +26,7 @@ function Fun() {
       fun,
     }
 
-    await axios.post(apiUrl, { fields: loadFun })
+    await axios.post(funUrl, { fields: loadFun })
     
     setToggleFetch(!toggleFetch);
   }

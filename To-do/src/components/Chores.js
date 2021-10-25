@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
 
 
 function Chore({ chores }) {
   const choreName = chores.find(identifyChore => identifyChore.fields.chore)
   const [chore, setChore] = useState('');
   const [toggleFetch, setToggleFetch] = useState(true)
-  const choreUrl = ('')
+  const choreUrl = ('https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key=key6vJOZALxfOvCDy')
   useEffect(() => {
-    const getData = async () => {
-      const resp = await axios.get(url);
+    const getChoreData = async () => {
+      const resp = await axios.get(choreUrl);
       setActivity(resp.data.records)
 
     }
-    getData();
+    getChoreData();
   }, [toggleFetch]);
 
   const handleSubmit = async (ev) => {
@@ -24,7 +23,7 @@ function Chore({ chores }) {
       chore,
     }
 
-    await axios.post(apiUrl, { fields: loadChore })
+    await axios.post(choreUrl, { fields: loadChore })
     
     setToggleFetch(!toggleFetch);
   }
