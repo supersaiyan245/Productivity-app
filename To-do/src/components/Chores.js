@@ -5,7 +5,7 @@ import Calendar from 'react-calendar';
 
   function Chore() {
   
-  const [choreActivity, setChoreActivity] = useState({})
+  const [choreActivity, setChoreActivity] = useState([])
   const [value, onChange] = useState(new Date());
   const [chore, setChore] = useState('');
   const [toggleFetch, setToggleFetch] = useState(true)
@@ -33,13 +33,15 @@ import Calendar from 'react-calendar';
   }
 
   const handleKeyPress = ev => {
-    if (ev.key == 'Enter') {
+    if (ev.key === 'Enter') {
       ev.preventDefault();
       handleSubmit(ev);
       console.log("I have entered");
       console.log(value)
     }
-  }
+    }
+    
+    const getChores = (choreActivity.forEach(activeChore =>  activeChore.fields.chore))
 
   const deleteChore = async () => {
     // Try/Catch to handle 404 errors from the server
@@ -63,11 +65,9 @@ import Calendar from 'react-calendar';
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
       </form>
-      <input type="checkbox" id="chore" name="assignedChore" />
-      {/* { choreActivity.map((activeChore) => (
-      <label for="chore">{activeChore.fields.}</label> 
-      ))} */}
-      <button onClick = {deleteChore}></button>
+        <input type="checkbox" id="chore" name="assignedChore" />
+      <label htmlFor="chore">{getChores }</label>
+      <button onClick = {deleteChore}>Delete Chore</button>
     </div>
   )
 }
