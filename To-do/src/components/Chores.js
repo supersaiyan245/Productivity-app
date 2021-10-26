@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Calendar from 'react-calendar';
 
 
-function Chore() {
+  function Chore() {
+  
   const [choreActivity, setChoreActivity] = useState({})
+  const [value, onChange] = useState(new Date());
   const [chore, setChore] = useState('');
   const [toggleFetch, setToggleFetch] = useState(true)
   const choreUrl = ('https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key=key6vJOZALxfOvCDy')
@@ -18,9 +21,10 @@ function Chore() {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-
+    
     const loadChore = {
-      chore,
+      "Date": value, 
+      "Chore": chore
     }
 
     await axios.post(choreUrl, { fields: loadChore })
@@ -33,6 +37,7 @@ function Chore() {
       ev.preventDefault();
       handleSubmit(ev);
       console.log("I have entered");
+      console.log(value)
     }
   }
 
@@ -50,6 +55,10 @@ function Chore() {
 
   return (
     <div>
+      <Calendar
+        onChange={onChange}
+        value={value}
+      />
       <form onSubmit={handleKeyPress}>
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
