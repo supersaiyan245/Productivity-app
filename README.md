@@ -98,3 +98,7 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 <li>Making a login page</li>
 
 ### Threats:
+
+## Links:
+<li>https://stackoverflow.com/questions/14542062/eventlistener-enter-key</li>
+<li>https://github.com/wojtekmaj/react-calendar/blob/main/README.md</li>
