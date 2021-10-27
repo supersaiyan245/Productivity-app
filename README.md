@@ -27,7 +27,6 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
         }
     ]
   }
-}
 ```
 
 #### MVP 
@@ -56,10 +55,10 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 7 hrs | |
-| Working with API | H | 3hrs| 5 hrs |  |
-| Adding Check Boxes | H | 30 mins | 20 mins |  |
-| Adding days of the week | H | 1 hrs| 1 hrs |  |
+| Adding Form | H | 3hrs| 7 hrs | 2 hrs |
+| Working with API | H | 3hrs| 5 hrs | 7 hrs  |
+| Adding Check Boxes | H | 30 mins | 20 mins | 1 hr |
+| Adding day of the week | H | 1 hrs| 1 hrs | 3 hrs |
 | Styling | H | 3hrs| 15 hrs |  |
 | Post MVP | H | 3hrs| 5 hrs |  |
 | Total | H | 6hrs| 5hrs |  |
@@ -81,3 +80,4 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 ## Links:
 <li>https://stackoverflow.com/questions/14542062/eventlistener-enter-key</li>
 <li>https://github.com/wojtekmaj/react-calendar/blob/main/README.md</li>
+</li>https://stackoverflow.com/questions/51003189/reactjs-how-to-style-react-calendar</li>

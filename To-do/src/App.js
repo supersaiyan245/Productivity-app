@@ -10,9 +10,9 @@ import { Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Nav />
-      {/* <Route path="/">
-      </Route> */}
+      <div className="Nav">
+        <Nav />
+      </div>
       <Route path='/List/Chores/' exact>
         <Chore
         />

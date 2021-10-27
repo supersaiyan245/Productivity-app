@@ -45,7 +45,8 @@ import Calendar from 'react-calendar';
 
   const deleteChore = async () => {
     const url = `https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key=key6vJOZALxfOvCDy`;
-      await axios.delete(url);
+
+      await axios.delete(url, chore);
   
     setToggleFetch(!toggleFetch);
     }
@@ -57,19 +58,21 @@ import Calendar from 'react-calendar';
         <Calendar
           onChange={setDateValue}
           value={dateValue}
-          />
+        />
       </div>
-      <form onSubmit={handleKeyPress}>
+      <div className="form">
+        <form onSubmit={handleKeyPress}>
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
-      </form>
+        </form>
+      </div>
         <h5>{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
       {choreActivity.map(activity =>
-      (<div>
-          <input type="checkbox" id="chore" name="assignedChore" />
-          <label htmlFor="chore">{activity.fields.Chore}</label>
-          <button onClick = {deleteChore}>Delete Chore</button>
-      </div>
+        (<div>
+            <input type="checkbox" id="chore" name="assignedChore" />
+            <label htmlFor="chore">{activity.fields.Chore}</label>
+            <button onClick = {deleteChore()}>Delete Chore</button>
+        </div>
       ))}
     </div>
   )
