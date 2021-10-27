@@ -1,8 +1,18 @@
-.Nav {
-  margin-bottom: 100px;
-  text-align: center;
+.headers {
+  color: white;
 }
 
-Calendar {
+.Nav {
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 100px;
+  text-align: center;
+  height: 50px;
+  background-color: black;
+}
+
+.react-calendar {
+  margin-left: 250px;
   margin-bottom: 50px;
+  width: 100%
 }

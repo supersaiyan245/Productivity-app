@@ -49,23 +49,23 @@ import Calendar from 'react-calendar';
   
     setToggleFetch(!toggleFetch);
     }
-    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.date === dateValue)
-
+    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.Date === dateValue.toString())
+    console.log(filteredChoreDate);
+// filter through the data and return a date that matches the date clicked on calendar(dateValue)
   return (
     <div>
-      <div className="react-calendar">
-        <Calendar
+      <Calendar
+        className="react-calendar"
           onChange={setDateValue}
           value={dateValue}
         />
-      </div>
       <div className="form">
         <form onSubmit={handleKeyPress}>
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
         </form>
       </div>
-        <h5>{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
+      <h5>{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
       {choreActivity.map(activity =>
         (<div className="chore-list">
             <input type="checkbox" id="chore" name="assignedChore" />
