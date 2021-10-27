@@ -1,11 +1,29 @@
 .headers {
   color: white;
+  padding: 0px 20px;
+}
+
+.main-background {
+  background-color: rgba(53, 236, 218, 0.65);
+  margin-bottom: 75px;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: wrap;
+  font-size: xx-large;
+  align-items: center;
+  justify-content: center;
 }
 
 .Nav {
   font-size: 40px;
   font-style: italic;
-  margin-bottom: 100px;
   text-align: center;
   height: 50px;
   background-color: black;
