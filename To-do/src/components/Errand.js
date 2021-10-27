@@ -19,4 +19,21 @@ function Errand() {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
+    const loadErrand = {
+      "Date": errandDateValue, 
+      "Errand": errand
+    }
+
+    await axios.post(errandUrl, { fields: loadErrand })
+    
+    setToggleFetch(!toggleFetch);
+  }
+
+  const handleKeyPress = ev => {
+    if (ev.key === 'Enter') {
+      ev.preventDefault();
+      handleSubmit(ev);
+    }
+  }
+
 
