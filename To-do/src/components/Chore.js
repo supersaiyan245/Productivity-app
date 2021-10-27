@@ -49,7 +49,7 @@ import Calendar from 'react-calendar';
   
     setToggleFetch(!toggleFetch);
     }
-    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.Date === dateValue.toString())
+    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.Date === dateValue.toString)
     console.log(filteredChoreDate);
 // filter through the data and return a date that matches the date clicked on calendar(dateValue)
   return (
