@@ -53,10 +53,12 @@ import Calendar from 'react-calendar';
 
   return (
     <div>
-      <Calendar
-        onChange={setDateValue}
-        value={dateValue}
-      />
+      <div className="react-calendar">
+        <Calendar
+          onChange={setDateValue}
+          value={dateValue}
+          />
+      </div>
       <form onSubmit={handleKeyPress}>
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />

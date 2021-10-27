@@ -33,7 +33,7 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 #### MVP 
 <li>Homepage updates the Chores, Errands, and Fun lists</li>
 <li>Add Seperate APIs or Tables to hold lists
-<li>Day of the current week and days of the current week are shown on Home, Chore, Errand, and Fun Pages</li>
+<li>Day of the current week or days of the current week are shown on Home, Chore, Errand, and Fun Pages</li>
 <li>Fun lists sends an alert message to do a task after certain number of Chores and Errands lists are checked off</li>
 
 #### PostMVP  
