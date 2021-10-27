@@ -37,3 +37,24 @@ function Errand() {
   }
 
 
+  return (
+    <div>
+    <div className="form">
+      <form onSubmit={handleKeyPress}>
+      <label>errand</label>
+      <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
+      </form>
+    </div>
+    <h5>{errandDateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
+    {errandActivity.map(activity =>
+      (<div className="chore-list">
+          <input type="checkbox" id="errand" name="assignedErrand" />
+          <label htmlFor="errand">{activity.fields.Errand}</label>
+          {/* <button onClick = {deleteChore()}>Delete Chore</button> */}
+      </div>
+    ))}
+  </div>
+  )
+}
+
+export default Errand;
