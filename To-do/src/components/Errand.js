@@ -39,6 +39,11 @@ function Errand() {
 
   return (
     <div>
+       <Calendar
+      className="react-calendar"
+        onChange={setErrandDateValue}
+        value={errandDateValue}
+      />
     <div className="form">
       <form onSubmit={handleKeyPress}>
       <label>errand</label>
