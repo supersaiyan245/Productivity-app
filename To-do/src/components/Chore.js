@@ -40,23 +40,16 @@ import Calendar from 'react-calendar';
       console.log(typeof dateValue)
       console.log(dateValue.toString())
     }
-    }
+  }
     
-    const getChores = (choreActivity.map(activeChore => activeChore.fields.chore))
-    //high order function should receive the data 
-    //retrieve chores entered for specified dates
 
   const deleteChore = async () => {
-    // Try/Catch to handle 404 errors from the server
-    // ie catch whenever someone deletes something before you
     const url = `https://api.airtable.com/v0/app0MKbDlolCovy3v/Table%201?api_key=key6vJOZALxfOvCDy`;
-    // props.chirp represents the data because it is given that value on App. 
-    //Id is passed as the identifier for the object url to be delete
       await axios.delete(url);
   
     setToggleFetch(!toggleFetch);
-    //This is telling the function to change toggle fetch so the page will load again
-  }
+    }
+    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.date === dateValue)
 
   return (
     <div>
@@ -68,10 +61,14 @@ import Calendar from 'react-calendar';
         <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
       </form>
-        <h5>{dateValue.toString()}</h5>
-        <input type="checkbox" id="chore" name="assignedChore" />
-      <label htmlFor="chore">{getChores }</label>
-      <button onClick = {deleteChore}>Delete Chore</button>
+        <h5>{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
+      {choreActivity.map(activity =>
+      (<div>
+          <input type="checkbox" id="chore" name="assignedChore" />
+          <label htmlFor="chore">{activity.fields.Chore}</label>
+          <button onClick = {deleteChore}>Delete Chore</button>
+      </div>
+      ))}
     </div>
   )
 }
