@@ -17,37 +17,16 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 ## API and Data Sample
 
 ```json
-{
+    {
     "records": [
         {
-            "id": "recONRzIUTuZ5lXaF",
             "fields": {
-                "author": "Liz Yrineo",
-                "setup": "Why did the tomato turn red?",
-                "punchline": "Because it saw the salad dressing!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        },
-        {
-            "id": "rec3oYZ5Tp0AIDsKe",
-            "fields": {
-                "author": "Rachel Moskowitz",
-                "setup": "What did the green grape say to the red grape?",
-                "punchline": "Breathe, idiot, breathe!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        },
-        {
-            "id": "recA34tOaoE1IVeC1",
-            "fields": {
-                "author": "Gary Grant",
-                "setup": "How do you make holy water?",
-                "punchline": "You boil the hell out of it!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
+                "Date": "10/25/2021",
+                "Chore": "text"
+                }
         }
-    ],
-    "offset": "recA34tOaoE1IVeC1"
+    ]
+  }
 }
 ```
 
