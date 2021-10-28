@@ -16,4 +16,15 @@ function Recommendations() {
     getRecommendations()
   }, [toggleFetch])
 
-  
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+
+    const loadRecommendations = {
+      recommendation
+    }
+
+    await axios.post(url, { fields: loadRecommendations })
+
+    setToggleFetch(!toggleFetch);
+  }
+
