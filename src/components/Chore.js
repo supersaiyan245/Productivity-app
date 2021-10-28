@@ -43,12 +43,12 @@ import moment from "moment";
   }
     
 
-  // const deleteChore = async (choreId) => {
+  const deleteChore = async (choreId) => {
 
-  //     await axios.delete(`${choreUrl}/${choreId}`);
+      await axios.delete(`${choreUrl}/${choreId}`);
   
-  //   setToggleFetch(!toggleFetch);
-  //   }
+    setToggleFetch(!toggleFetch);
+    }
     
 // filter through the data and return a date that matches the date clicked on calendar(dateValue)
   return (
@@ -69,7 +69,7 @@ import moment from "moment";
         (<div className="chore-list">
             <input type="checkbox" id="chore" name="assignedChore" />
             <label htmlFor="chore">{activity.fields.Chore}</label>
-            {/* <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button> */}
+            <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button>
         </div>
       ))}
     </div>
