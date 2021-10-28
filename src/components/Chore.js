@@ -31,7 +31,15 @@ import Calendar from 'react-calendar';
     
     setToggleFetch(!toggleFetch);
     }
-    const filteredDate = choreActivity.find(findDate => findDate.fields.Date === dateValue.toString());
+    const filteredDate = (data) => {
+      let specificChore = [];
+      for (let i = 0; i < data.length; i++) {
+        if (`${dateValue.getFullYear()}-${dateValue.getMonth() + 1}-${dateValue.getDate()}` === data[i].fields.Date.toString().split('T').slice(0, 1).toString()) {
+          specificChore.push(data[i].fields.Chore)
+        }
+      }
+      return specificChore;
+    }
 
   const handleKeyPress = ev => {
     if (ev.key === 'Enter') {
@@ -40,9 +48,11 @@ import Calendar from 'react-calendar';
       console.log("I have entered");
       console.log(typeof dateValue)
       console.log(dateValue.toString().split(' ').slice(0, 4))
-      console.log(dateValue.getMonth()+ 1)
-      console.log(choreActivity[0].fields.Date.toString().split('T'));
-      console.log(filteredDate);
+      console.log(`${dateValue.getFullYear()}-${dateValue.getMonth()+ 1}-${dateValue.getDate()}`)
+      console.log(choreActivity[0].fields.Date.toString().split('T').slice(0, 1));
+      console.log(`${dateValue.getFullYear()}-${dateValue.getMonth() + 1}-${dateValue.getDate()}` === choreActivity[0].fields.Date.toString().split('T').slice(0, 1).toString())
+      console.log(filteredDate(choreActivity));
+      // console.log(filteredDate);
     }
   }
  
@@ -69,10 +79,10 @@ import Calendar from 'react-calendar';
         </form>
       </div>
       <h5>{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
-      {choreActivity.map(activity =>
+      {filteredDate(choreActivity).map(activity =>
         (<div className="chore-list">
             <input type="checkbox" id="chore" name="assignedChore" />
-            <label htmlFor="chore">{activity.fields.Chore}</label>
+            <label htmlFor="chore">{activity}</label>
             <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button>
         </div>
       ))}
