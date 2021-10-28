@@ -28,3 +28,18 @@ function Recommendations() {
     setToggleFetch(!toggleFetch);
   }
 
+  const handleKeyPress = ev => {
+    if (ev.key === 'Enter') {
+      ev.preventDefault();
+      handleSubmit(ev);
+    }
+  }
+  return (
+    <div>
+      <form onSubmit={handleKeyPress}>
+        <input className="form" value={recommendation} onChange={(e) => setRecommendation(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Recommendation" />
+      </form>
+    </div>
+  )
+}
+export default Recommendations;
