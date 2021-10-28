@@ -81,3 +81,4 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 <li>https://stackoverflow.com/questions/14542062/eventlistener-enter-key</li>
 <li>https://github.com/wojtekmaj/react-calendar/blob/main/README.md</li>
 </li>https://stackoverflow.com/questions/51003189/reactjs-how-to-style-react-calendar</li>
+</li>https://stackoverflow.com/questions/68731452/how-to-convert-2021-07-14t000000-000z-into-a-standard-date-in-yyyy-mm-dd-forma</li>
