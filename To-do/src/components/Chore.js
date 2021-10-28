@@ -43,14 +43,16 @@ import Calendar from 'react-calendar';
   }
     
 
-  const deleteChore = async () => {
+  // const deleteChore = async (choreId) => {
 
-      await axios.delete(choreUrl, chore);
+  //     await axios.delete(`${choreUrl}/${choreId}`);
   
-    setToggleFetch(!toggleFetch);
-    }
-    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.Date === dateValue.toString)
-    console.log(filteredChoreDate);
+  //   setToggleFetch(!toggleFetch);
+  //   }
+    const filteredChoreDate = choreActivity.filter(findChore => findChore.fields.Date === dateValue.toString());
+    console.log(dateValue.toString());
+    console.log(new Date('choreActivity[0].fields.Date'));
+    console.log(choreActivity);
 // filter through the data and return a date that matches the date clicked on calendar(dateValue)
   return (
     <div>
@@ -70,7 +72,7 @@ import Calendar from 'react-calendar';
         (<div className="chore-list">
             <input type="checkbox" id="chore" name="assignedChore" />
             <label htmlFor="chore">{activity.fields.Chore}</label>
-            <button onClick = {deleteChore()}>Delete Chore</button>
+            {/* <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button> */}
         </div>
       ))}
     </div>
