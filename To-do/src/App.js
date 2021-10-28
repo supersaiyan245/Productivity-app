@@ -6,6 +6,7 @@ import { Route } from "react-router-dom";
 import 'react-calendar/dist/Calendar.css'; 
 import AboutUs from './components/About Us.js';
 import Errand from './components/Errand';
+import Recommendations from './components/Recommendations';
 
 
 
@@ -27,7 +28,9 @@ function App() {
         <Errand
         />
       </Route>
-      {/* <Route path="" */}
+      <Route path="/Recommendations" exact>
+        <Recommendations />
+      </Route>
     </div>
   );
 }

@@ -49,26 +49,7 @@ import moment from "moment";
   
   //   setToggleFetch(!toggleFetch);
   //   }
-    const findDate = choreActivity.map(item => item.fields.Date);
-    console.log(findDate);
-    let specificDate = new Date(findDate);
-    console.log(specificDate);
-  
-    function formatDate (date) {
-      var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-      if (month.length < 2) 
-        month = '0' + month;
-      if (day.length < 2) 
-        day = '0' + day;
-
-      return [year, month, day].join('-');
-    }
-    const filteredChoreDate = formatDate(specificDate);
-    console.log(filteredChoreDate)
+    
 // filter through the data and return a date that matches the date clicked on calendar(dateValue)
   return (
     <div>

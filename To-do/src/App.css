@@ -43,3 +43,12 @@
 .para {
   text-align: center;
 }
+
+.form {
+  margin-top: 100px;
+  width: 50%;
+  height: 100px;
+  text-align: center;
+  flex-direction: wrap;
+}
+
