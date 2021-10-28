@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Calendar from 'react-calendar';
-import moment from "moment";
+
 
   function Chore() {
   
@@ -30,7 +30,8 @@ import moment from "moment";
     await axios.post(choreUrl, { fields: loadChore })
     
     setToggleFetch(!toggleFetch);
-  }
+    }
+    const filteredDate = choreActivity.find(findDate => findDate.fields.Date === dateValue.toString());
 
   const handleKeyPress = ev => {
     if (ev.key === 'Enter') {
@@ -38,14 +39,17 @@ import moment from "moment";
       handleSubmit(ev);
       console.log("I have entered");
       console.log(typeof dateValue)
-      console.log(dateValue.toString())
+      console.log(dateValue.toString().split(' ').slice(0, 4))
+      console.log(dateValue.getMonth()+ 1)
+      console.log(choreActivity[0].fields.Date.toString().split('T'));
+      console.log(filteredDate);
     }
   }
-    
+ 
 
   const deleteChore = async (choreId) => {
 
-      await axios.delete(`${choreUrl}/${choreId}`);
+      await axios.delete(choreUrl + `&records[]=${choreId}`);
   
     setToggleFetch(!toggleFetch);
     }

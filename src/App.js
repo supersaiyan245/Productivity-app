@@ -20,6 +20,9 @@ function App() {
       <Route path="/" >
         <Home />
       </Route>
+      <Route path="/About Us" exact>
+        <AboutUs />
+      </Route>
       <Route path='/List/Chores/' exact>
         <Chore
         />

@@ -1,32 +1,29 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 function Recommendations() {
   const [recommendation, setRecommendation] = useState('');
-  const [recommendationData, setRecommendationData] = useState([]);
-  const [toggleFetch, setToggleFetch] = useState(true);
+  const [toggleFetch, setToggleFetch] = useState(true)
   const url = 'https://api.airtable.com/v0/apps9s4KZC7UVUDX6/Table%201?api_key=key6vJOZALxfOvCDy';
-
-  useEffect(() => {
-    const getRecommendations = async () => {
-      const resp = await axios.get(url);
-      setRecommendationData(resp.data.records)
-    }
-    getRecommendations()
-  }, [toggleFetch])
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
 
     const loadRecommendations = {
-      recommendation
+      "records": [
+        {
+          "fields": {
+            Recommendations
+          }
+        }
+      ]
     }
 
-    await axios.post(url, { fields: loadRecommendations })
-
+    await axios.post(url, loadRecommendations)
     setToggleFetch(!toggleFetch);
   }
+
 
   const handleKeyPress = ev => {
     if (ev.key === 'Enter') {
