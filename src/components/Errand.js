@@ -66,14 +66,13 @@ function Errand() {
         value={errandDateValue}
       />
     <div className="form">
-      <form onSubmit={handleKeyPress}>
-      <label>errand</label>
+        <form onSubmit={handleKeyPress}>
+        <h5>{errandDateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
       <input value={errand} onChange={(e) => setErrand(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
       </form>
     </div>
-    <h5>{errandDateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
     {filteredErrandDate(errandActivity).map(activity =>
-      (<div className="chore-list">
+      (<div className="form-list">
           <input type="checkbox" id="errand" name="assignedErrand" />
           <label htmlFor="errand">{activity.fields.Errand}</label>
           <button onClick = {() => deleteErrand(activity.id)}>Delete Errand</button>

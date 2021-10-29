@@ -66,19 +66,18 @@ import Calendar from 'react-calendar';
           value={dateValue}
         />
       <div className="form">
+        <h5 className="name">{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
         <form onSubmit={handleKeyPress}>
-        <label>Chore</label>
         <input value={chore} onChange={(e) => setChore(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Chore" />
         </form>
       </div>
-      <h5>{dateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
-      {filteredDate(choreActivity).map(activity =>
-        (<div className="chore-list">
-            <input type="checkbox" id="chore" name="assignedChore" />
-            <label htmlFor="chore">{activity.fields.Chore}</label>
-            <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button>
-        </div>
-      ))}
+        {filteredDate(choreActivity).map(activity =>
+          (<div className="form-list">
+              <input type="checkbox" id="chore" name="assignedChore" />
+              <label htmlFor="chore">{activity.fields.Chore}</label>
+              <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button>
+          </div>
+        ))}
     </div>
   )
 }
