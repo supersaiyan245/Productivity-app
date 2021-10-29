@@ -31,7 +31,8 @@ function Recommendations() {
     }
   }
   return (
-    <div>
+    <div className="form-container">
+      <h2 className="form-title">Tell Us How We Can Improve This App</h2>
       <form onSubmit={handleKeyPress}>
         <input className="form" value={recommendations} onChange={(e) => setRecommendations(e.target.value)} onKeyPress={handleKeyPress} placeholder="Add a Recommendation" />
       </form>
