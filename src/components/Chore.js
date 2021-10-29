@@ -35,7 +35,7 @@ import Calendar from 'react-calendar';
       let specificChore = [];
       for (let i = 0; i < data.length; i++) {
         if (`${dateValue.getFullYear()}-${dateValue.getMonth() + 1}-${dateValue.getDate()}` === data[i].fields.Date.toString().split('T').slice(0, 1).toString()) {
-          specificChore.push(data[i].fields.Chore)
+          specificChore.push(data[i])
         }
       }
       return specificChore;
@@ -45,13 +45,6 @@ import Calendar from 'react-calendar';
     if (ev.key === 'Enter') {
       ev.preventDefault();
       handleSubmit(ev);
-      console.log("I have entered");
-      console.log(typeof dateValue)
-      console.log(dateValue.toString().split(' ').slice(0, 4))
-      console.log(`${dateValue.getFullYear()}-${dateValue.getMonth()+ 1}-${dateValue.getDate()}`)
-      console.log(choreActivity[0].fields.Date.toString().split('T').slice(0, 1));
-      console.log(`${dateValue.getFullYear()}-${dateValue.getMonth() + 1}-${dateValue.getDate()}` === choreActivity[0].fields.Date.toString().split('T').slice(0, 1).toString())
-      console.log(filteredDate(choreActivity));
       // console.log(filteredDate);
     }
   }
@@ -82,7 +75,7 @@ import Calendar from 'react-calendar';
       {filteredDate(choreActivity).map(activity =>
         (<div className="chore-list">
             <input type="checkbox" id="chore" name="assignedChore" />
-            <label htmlFor="chore">{activity}</label>
+            <label htmlFor="chore">{activity.fields.Chore}</label>
             <button onClick = {() => deleteChore(activity.id)}>Delete Chore</button>
         </div>
       ))}

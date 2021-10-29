@@ -33,9 +33,30 @@ function Errand() {
     if (ev.key === 'Enter') {
       ev.preventDefault();
       handleSubmit(ev);
+      console.log(errandDateValue);
+      console.log(errandActivity[0].fields.Date);
+      console.log(errandActivity[0].fields.Date.split('T').slice(0, 1));
+      console.log(`${errandDateValue.getFullYear()}-${errandDateValue.getMonth() + 1}-${errandDateValue.getDate()}` === errandActivity[0].fields.Date.split('T').slice(0, 1).toString())
     }
   }
 
+  const deleteErrand = async (errandId) => {
+
+    await axios.delete(errandUrl + `&records[]=${errandId}`);
+
+  setToggleFetch(!toggleFetch);
+  }
+  
+  const filteredErrandDate = (data) => {
+    let specificErrand = [];
+    for (let i = 0; i < data.length; i++) {
+      let splitData = data[i].fields.Date?.split('T')
+      if (`${errandDateValue.getFullYear()}-${errandDateValue.getMonth() + 1}-${errandDateValue.getDate()}` === splitData?.slice(0, 1).toString()) {
+        specificErrand.push(data[i])
+      }
+    }
+    return specificErrand;
+  }
 
   return (
     <div>
@@ -51,11 +72,11 @@ function Errand() {
       </form>
     </div>
     <h5>{errandDateValue.toString().split(' ').slice(0, 4).join(' ')}</h5>
-    {errandActivity.map(activity =>
+    {filteredErrandDate(errandActivity).map(activity =>
       (<div className="chore-list">
           <input type="checkbox" id="errand" name="assignedErrand" />
           <label htmlFor="errand">{activity.fields.Errand}</label>
-          {/* <button onClick = {deleteChore()}>Delete Chore</button> */}
+          <button onClick = {() => deleteErrand(activity.id)}>Delete Errand</button>
       </div>
     ))}
   </div>
