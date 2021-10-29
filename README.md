@@ -43,25 +43,26 @@ https://whimsical.com/to-do-app-MuqfKEq1ggWcMPRjs3xkvs
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|October 22| Prompt / Wireframes / Priority Matrix / Timeframes / Form | Incomplete
-|October 23| Pseudocode / Form | Incomplete
-|October 24| Form / Airtable API / Checkboxes | Incomplete
-|October 25| Airtable API / Checkboxes / days of the week | Incomplete
-|October 26| MVP / Style| Incomplete
+|October 22| Prompt / Wireframes / Priority Matrix / Timeframes / Form | complete
+|October 23| Pseudocode / Form | complete
+|October 24| Form / Airtable API / Checkboxes | complete
+|October 25| Airtable API / Checkboxes / days of the week | complete
+|October 26| MVP / Style| Complete
 |October 27|Post-MVP / Styling | Incomplete
-|October 28| Styling | Incomplete
+|October 28| Styling | Complete
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 3hrs| 7 hrs | 2 hrs |
-| Working with API | H | 3hrs| 5 hrs | 7 hrs  |
+| Working with API | H | 30 hrs| 40 hrs | 60 hrs  |
+| Writing Logic | H | 20 hrs| 20 hrs | 100 hrs  |
 | Adding Check Boxes | H | 30 mins | 20 mins | 1 hr |
 | Adding day of the week | H | 1 hrs| 1 hrs | 3 hrs |
-| Styling | H | 3hrs| 15 hrs |  |
-| Post MVP | H | 3hrs| 5 hrs |  |
-| Total | H | 6hrs| 5hrs |  |
+| Styling | H | 3hrs| 15 hrs | 4 hrs |
+| Post MVP | H | 3hrs| 5 hrs | 0 hrs |
+| Total | H | 59 hrs 30 mins| 72 hrs 30 mins | 170 hrs |
 
 ## SWOT Analysis
 
